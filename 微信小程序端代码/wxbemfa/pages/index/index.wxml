@@ -1,0 +1,94 @@
+<!--index.wxml-->
+<view >
+
+  <view class="van-hairline--surround title">温湿度测试</view>
+
+
+<!--设备状态-->
+<van-cell-group>
+  <van-cell title="设备状态" value="{{device_status}}" />
+</van-cell-group>
+<!--设备状态-->
+<van-cell-group>
+  <van-cell title="垃圾桶1状态" style="text-align: center;" />
+</van-cell-group>
+
+<van-cell title="垃圾桶1满度">
+    <view slot="value">{{fillText1}}</view>
+  </van-cell>
+
+  <van-progress 
+    percentage="{{fillRate1}}" 
+    show-percentage 
+    stroke-width="10"
+    color="{{fillRate1 > 80 ? '#ff4444' : fillRate1 > 50 ? '#ff9800' : '#07c160'}}"
+    style="margin: 0 16px 16px;"
+  />
+
+
+<!--温湿度图片显示-->
+<view  class="pic">
+<van-row>
+  <van-col span="12" ><van-icon  size="60px" name="/utils/img/shidu.png" /></van-col>
+  <van-col span="12"><van-icon  size="60px" name="/utils/img/wendu.png" /></van-col>
+</van-row>
+</view>
+
+<!--温湿度数值-->
+<view  class="wendu">
+  <van-row style="text-align:center;">
+    <van-col span="12">湿度：{{shidu}} %</van-col>
+    <van-col span="12">温度：{{wendu}} ℃</van-col>
+  </van-row>
+</view>
+
+
+
+<!--控制垃圾桶1-->
+<view  class="light">
+<van-cell  title="垃圾桶1开关" icon="{{ledicon}}" >
+  <van-switch checked="{{ checked }}" size="24px" bind:change="onChange" />
+</van-cell>
+</view>
+<!--设备状态-->
+<van-cell-group>
+  <van-cell title="垃圾桶2状态" style="text-align: center;" />
+</van-cell-group>
+
+
+<van-cell title="垃圾桶2满度">
+    <view slot="value">{{fillText2}}</view>
+  </van-cell>
+  <van-progress 
+    percentage="{{fillRate2}}" 
+    show-percentage 
+    stroke-width="10"
+    color="{{fillRate2 > 80 ? '#ff4444' : fillRate2 > 50 ? '#ff9800' : '#07c160'}}"
+    style="margin: 0 16px 16px;"
+  />
+
+
+<!--温湿度图片显示-->
+<view  class="pic">
+<van-row>
+  <van-col span="12" ><van-icon  size="60px" name="/utils/img/shidu.png" /></van-col>
+  <van-col span="12"><van-icon  size="60px" name="/utils/img/wendu.png" /></van-col>
+</van-row>
+</view>
+
+<!--温湿度数值-->
+<view  class="wendu">
+  <van-row style="text-align:center;">
+    <van-col span="12">湿度：{{shidu2}} %</van-col>
+    <van-col span="12">温度：{{wendu2}} ℃</van-col>
+  </van-row>
+</view>
+
+
+
+<view  class="light">
+<van-cell  title="垃圾桶2开关" icon="{{ledicon2}}" >
+  <van-switch checked="{{ checked2 }}" size="24px" bind:change="onChange2" />
+</van-cell>
+</view>
+</view>

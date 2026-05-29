@@ -1,0 +1,8 @@
+train: D:/Downloads/Compressed/labelme/data/VOCdevkit/train/images  # train images (relative to 'path') 128 images
+val: D:/Downloads/Compressed/labelme/data/VOCdevkit/val/images  # val images (relative to 'path') 128 images
+test: D:/Downloads/Compressed/labelme/data/VOCdevkit/test/images
+
+nc: 3
+
+# Classes
+names: ['battery','glass','paper']
